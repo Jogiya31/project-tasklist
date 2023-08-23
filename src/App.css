@@ -1,0 +1,54 @@
+.mr-2{
+  margin-right:10px;
+}
+.form-grp-margin{
+  margin-top: 20px;
+}
+
+.head{
+  background-color: aliceblue;
+  padding: 10px;
+}
+
+.incomplete-task{
+  border-radius: 5px;
+  border-color: aliceblue;
+  min-height: 400px;
+  max-height: 550px;
+  box-shadow: 0px 0px 4px 0px #212121;
+}
+.incomplete-task .header{
+  font-weight: 600;
+  text-align: center;
+  background-color: #ffe7b8;
+}
+.incomplete-task .task-list{
+  overflow-y: auto;
+}
+
+.complete-task{
+  border-radius: 5px;
+  min-height: 400px;
+  max-height: 550px;
+  box-shadow: 0px 0px 4px 0px #212121;
+}
+.complete-task .header{
+  font-weight: 600;
+  text-align: center;
+  background-color: #d8f6d4;
+}
+.complete-task .task-list{
+  overflow-y: auto;
+}
+
+.task-container {
+  display: flex;
+  justify-content: space-between;
+}
+.tasks{
+  width: 48%;
+}
+
+.task-card{
+  margin: 10px 5px;
+}
