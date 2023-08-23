@@ -23,13 +23,14 @@ const Tasks = () => {
     description: '',
   };
   const dispatch = useDispatch();
-  const [taskList, setTaskList]=useState([])
   const [completeTasks, setCompleteTasks] = useState([])
   const [inCompleteTasks, setInCompleteTasks] = useState([])
   const [showTask, setShowTask] = useState(false)
   const [showDelete, setShowDelete] = useState(false)
   const [currentData, setCurrentData] = useState(null)
   const [excelData, setExcelData] = useState([])
+  
+  // get data from redux store
   const tasksList = useSelector((state) => state.tasks.data);
 
   // enable add new task modal
@@ -48,13 +49,10 @@ const Tasks = () => {
   }, [])
 
   useEffect(() => {
-   if(tasksList.length > 0){
-    handleExport()
-    setCompleteTasks(tasksList.filter(item=>item.completed))
-    setInCompleteTasks(tasksList.filter(item=>!item.completed))
-    }
-    return () => {
-      setTaskList(tasksList)
+    if(tasksList.length>0){
+      handleExport()
+      setCompleteTasks(tasksList.filter(item=>item.completed))
+      setInCompleteTasks(tasksList.filter(item=>!item.completed))
     }
   }, [tasksList])
 
@@ -73,7 +71,7 @@ const Tasks = () => {
     handleCloseTask();
     setTimeout(()=>{
       dispatch(taskActions.getTasks());
-    },100)
+    },500)
   };
 
   // delete task from list
@@ -83,7 +81,7 @@ const Tasks = () => {
     handleCloseDelete();
     setTimeout(()=>{
       dispatch(taskActions.getTasks());
-    },100)
+    },500)
   }
 
   // create export xlsx file with custom header
@@ -111,7 +109,7 @@ const Tasks = () => {
   }
 
   if (destination.droppableId === "complete") {
-    taskList.map(task=>{
+    tasksList.map(task=>{
       if(task.id === Number(draggableId)){
         const payload = {...task, completed:true}
         dispatch(taskActions.updateTask(payload))
@@ -121,7 +119,7 @@ const Tasks = () => {
       }
     })
   }else if(destination.droppableId === "taskslist") {
-    taskList.map(task=>{
+    tasksList.map(task=>{
       if(task.id === Number(draggableId)){
         const payload = {...task, completed:false}
         dispatch(taskActions.updateTask(payload))

@@ -9,13 +9,13 @@
     {
       "title": "task 2",
       "description": "this is task 2",
-      "completed": false,
+      "completed": true,
       "id": 2
     },
     {
       "title": "task 3",
       "description": "this is task 3",
-      "completed": false,
+      "completed": true,
       "id": 3
     },
     {
@@ -25,16 +25,10 @@
       "id": 4
     },
     {
-      "title": "task 5",
-      "description": "this is task 5",
+      "title": "Task 5",
+      "description": "This is task 5",
       "completed": false,
       "id": 5
-    },
-    {
-      "title": "task 6",
-      "description": "this is task 6",
-      "completed": false,
-      "id": 6
     }
   ],
   "login": [

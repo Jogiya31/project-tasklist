@@ -7,7 +7,7 @@ import { Draggable } from "react-beautiful-dnd";
 const TaskCard = ({ task, index, handleCurrentTask ,showEdit,showDelete}) => {
 
   return (
-    <Draggable draggableId={task.id.toString()} index={index}>
+    <Draggable draggableId={task.id.toString()} index={index} className="draggable-card">
      { (provided)=>(
       <Card className='task-card' ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
         <Card.Body>

@@ -38,6 +38,7 @@ const LoginForm = () => {
         <Col xs={12} md={6} className="center-card-container" >
           <Card className="login-Card">
             <h2>Login</h2>
+            <p>Welcome back happy to see you again.</p>
             <Formik
               initialValues={initialValues}
               validationSchema={LoginSchema}
@@ -74,7 +75,6 @@ const LoginForm = () => {
                       type="invalid"
                     />
                   </BootstrapForm.Group>
-
                   <Button type="submit" variant="primary" className='mt-3'>
                     Submit
                   </Button>
